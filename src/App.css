@@ -1,10 +1,24 @@
 .App {
   text-align: center;
+  margin-top: 130px;
+  font-size: 36px;
+
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+.minus {
+  margin-right: 20px;
+  font-size: 36px;
+  width: 36px;
+}
+
+.plus {
+  margin-left: 20px;
+  font-size: 36px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -32,6 +46,7 @@
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
