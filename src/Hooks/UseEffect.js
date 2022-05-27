@@ -2,27 +2,25 @@ import React, { useState, useEffect } from 'react';
 
 function Demo() {
 
-    const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-    const [windowHeight, setWindowHeight] = useState(window.innerHeight);
-    const handleResize = () => {
-        setWindowWidth(window.innerWidth);
-        setWindowHeight(window.innerHeight);
-    }
+    const [resourceType, setResourceType] = useState('posts');
 
+    console.log(`Render / ${resourceType}`);
     useEffect(() => {
-        window.addEventListener('resize', handleResize);
-
-        /* Here hard to check the event is removed or not.  */
+        console.log("Resource Changed");
         return () => {
-            window.removeEventListener('resize', handleResize);
+            console.log("Return from resource change");
         }
-    }, [])
+    }, [resourceType]);
+
 
     return (
         <>
-            <div className='pre'>
-                <h3>Width : {windowWidth}</h3>
-                <h3>Height : {windowHeight}</h3>
+            <div>
+                <button className='btn btn-primary mx-2 my-2' onClick={() => { setResourceType('posts') }}>Post</button>
+                <button className='btn btn-primary mx-2 my-2' onClick={() => { setResourceType('users') }}>User</button>
+                <button className='btn btn-primary mx-2 my-2' onClick={() => { setResourceType('comments') }}>Comment</button>
+                <h4>{resourceType}</h4>
+                <pre>{JSON.stringify(item)}</pre>
             </div>
         </>
     )
