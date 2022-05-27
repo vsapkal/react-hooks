@@ -3,8 +3,8 @@ import React, { useState } from 'react'
 
 function App() {
 
-  const [count, setCount] = useState(0);
-  let d = 0;
+  let initialState = 0;
+  const [count, setCount] = useState(initialState);
 
   const handleInc = () => {
     setCount(count + 1);
@@ -14,7 +14,7 @@ function App() {
     if (count !== 0) {
       setCount(count - 1);
     } else {
-      setCount(d);
+      setCount(initialState);
     }
   }
 
