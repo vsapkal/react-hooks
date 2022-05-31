@@ -20,7 +20,6 @@ function Demo() {
                 <button className='btn btn-primary mx-2 my-2' onClick={() => { setResourceType('users') }}>User</button>
                 <button className='btn btn-primary mx-2 my-2' onClick={() => { setResourceType('comments') }}>Comment</button>
                 <h4>{resourceType}</h4>
-                <pre>{JSON.stringify(item)}</pre>
             </div>
         </>
     )
